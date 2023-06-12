@@ -2,23 +2,35 @@
 export default {
   content: ['./**/**/*{.tsx,ts}', 'index.html'],
   theme: {
-    extend: {
-      height:{
-        // px
-        '150px': '150px',
-        '250px': '250px',
-  
-        // percentage
-        '20%':'20%',
-        '50%':'50%',
-        '60%':'60%',
-        '80%': '80%',
-        '90%': '90%',
-        '100%': '100%',
-        //view height
-          
-        '100vh': '100vh',
+  extend: {
+    colors:{
+      dark:{
+        background:'#555555',
+        text:'white',
+        primary:'red'
       },
+      light: {
+        background:'white',
+        text:'#555555',
+        primary:'yellow'
+      }
+    },
+    height:{
+      // px
+      '150px': '150px',
+      '250px': '250px',
+
+      // percentage
+      '20%':'20%',
+      '50%':'50%',
+      '60%':'60%',
+      '80%': '80%',
+      '90%': '90%',
+      '100%': '100%',
+      //view height
+        
+      '100vh': '100vh',
+    },
       width:{
         //%
         '50%':'50%',

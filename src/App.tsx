@@ -1,25 +1,45 @@
-
-import { useEffect, useState } from "react";
 import Components from "./pages";
-import useLocalStorageHook from "./customhooks/useLocalStorageHook";
+import { ThemeContext } from './components/context/themeContext.ts';
+import {useEffect, useState} from 'react';
 
+
+interface ThemeContextType {
+  darkTheme?: boolean,
+  setDarkTheme: React.Dispatch<React.SetStateAction<boolean>>,
+  theme: string
+}
 
 
 const App:React.FC = () => {
-  const [theme] = useLocalStorageHook('theme', '');
-  const [toggleTheme, dispatch] = useState('light');
+
+  const [darkTheme, setDarkTheme] = useState(false)
+
+  const [theme, setTheme] = useState(()=>{
+    const myTheme = localStorage.getItem('theme')
+    if(myTheme){
+      return myTheme;
+    }else{
+      return "light";
+    }
+  })
+
 
   useEffect(()=>{
-    if(theme === 'dark')
-        dispatch('dark');
-    dispatch('light')
-  }, [theme])
-  
+    setTheme(theme === "dark"? "light" : "dark");
+    localStorage.setItem('theme', theme)
+
+  }, [darkTheme])
+
+  const themeContext: ThemeContextType = {
+    darkTheme, setDarkTheme, theme
+  }
+
   
   return (
-
-    <div className={`dark-${toggleTheme}-background text-${toggleTheme}-primary`}>
-      <Components />
+    <div className={`${theme === 'light' ? "bg-light-background" : "bg-dark-background"} h-screen`}>
+      <ThemeContext.Provider value={themeContext}>
+        <Components />
+      </ThemeContext.Provider>
     </div>
     )
 

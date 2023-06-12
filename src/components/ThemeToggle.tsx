@@ -1,18 +1,19 @@
-import useLocalStorageHook from "../customhooks/useLocalStorageHook";
 import { FaToggleOff, FaToggleOn} from 'react-icons/fa';
+import { useContext } from "react";
+import { ThemeContext } from "./context/themeContext";
 
-const ThemeToggle = () => {
-    const [theme, setTheme] = useLocalStorageHook('theme', '');
+const ThemeToggle = () => {    
+    const themeContext = useContext(ThemeContext)
 
     const handleClick = () => {
-        setTheme(theme === "dark"? "light" : "dark")
+        themeContext!.setDarkTheme(prevVal => !prevVal);
     }
     
   return (
     <button onClick={handleClick}>
-        { theme === 'dark' ?
+        { themeContext!.theme === 'dark' ?
             <FaToggleOn  
-                className="text-white text-2xl"
+                className="text-black text-2xl"
             />
             :
             <FaToggleOff 
