@@ -25,7 +25,7 @@ const Search = ({handleSearchToggle}: Props) => {
           placeholder="Search Something...." 
           name="search" 
           className="h-5/6 w-5/6 px-4 outline-none " />
-          <BsSearch />
+          {/* <BsSearch /> */}
         </div>
 
         // Search functionality comes later

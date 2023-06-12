@@ -5,7 +5,7 @@ export default {
   extend: {
     colors:{
       dark:{
-        background:'#555555',
+        background:'rgb(8, 8, 8)',
         text:'white',
         primary:'red'
       },

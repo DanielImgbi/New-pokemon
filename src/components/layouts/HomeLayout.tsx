@@ -5,10 +5,10 @@ import Search from "../Search";
 const Home = lazy(()=> import( "../../pages/Home"));
 
 const HomeLayout = () => {
-  const [showSearchModal, setShowSearchModalToggle] = useState(false);
+  const [showSearchModal, setShowSearchModal] = useState(false);
 
   const handleSearchToggle = () =>{
-    setShowSearchModalToggle( prev => !prev);
+    setShowSearchModal( prev => !prev);
   }
 
 

@@ -13,11 +13,11 @@ const ThemeToggle = () => {
     <button onClick={handleClick}>
         { themeContext!.theme === 'dark' ?
             <FaToggleOn  
-                className="text-black text-2xl"
+                className="text-dark-text text-2xl"
             />
             :
             <FaToggleOff 
-                className="text-white text-2xl"
+                className="text-light-text text-2xl"
             />
         }
     </button>
