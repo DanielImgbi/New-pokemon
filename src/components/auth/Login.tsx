@@ -35,12 +35,40 @@ const Login = ({setReload}: LoginProps) => {
 
       <div className=" h-100% lg:h-90% w-100% lg:w-50%  pb-4 my-10 shadow-lg rounded-lg">
       
-        <img src="/GIF's/pokemon-logo-png-0.png" alt="logo" className='h-250px w-60% m-auto '/>
+        <img 
+          src="/GIF's/pokemon-logo-png-0.png" 
+          alt="logo" 
+          className='h-250px w-60% m-auto '
+        />
 
         <div className=" px-12 my-3 rounded-lg">
-          <h3 className='text-2xl text-black font-bold '>Ready to take the next step?</h3>
-          <p className='my-3 text-gray-700 '>create an account or sign in with any of the providers</p>
-          <p className='text-gray-700 my-4'>By creating an account or logging in, you understand and agree to our <a href='#' className='text-blue-700'>Terms</a>. You also acknowledge our <a href='#' className='text-blue-700'>Cookies</a> and <a href='#' className='text-blue-700'>Privacy</a> policies.</p>
+          <h3 
+            className='text-2xl text-black font-bold '
+          >
+            Ready to take the next step?
+          </h3>
+
+          <p 
+            className='my-3 text-gray-700 '
+          >
+            create an account or sign in with any of the providers
+          </p>
+          <p 
+            className='text-gray-700 my-4'
+            >
+              By creating an account or logging in, you understand and agree to our 
+              <a href='#' 
+                className='text-blue-700'
+              >
+                Terms
+              </a>. 
+              You also acknowledge our 
+              <a 
+                href='#' 
+                className='text-blue-700'
+              >
+                Cookies
+              </a> and <a href='#' className='text-blue-700'>Privacy</a> policies.</p>
         </div>
 
         <button 
