@@ -28,7 +28,6 @@ const RootLayout:React.FC = () => {
   return (
     <div>
       {userData? < Outlet /> : <Login setReload={setReload}/>}
-
     </div>
   )
 }

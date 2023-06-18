@@ -1,6 +1,6 @@
 import Components from "./pages";
 import { ThemeContext } from './components/context/themeContext.ts';
-import {useEffect, useState} from 'react';
+import {useLayoutEffect, useState} from 'react';
 
 
 interface ThemeContextType {
@@ -22,18 +22,18 @@ const App:React.FC = () => {
     }
   })
 
-
-  useEffect(()=>{
-    setTheme(theme === "dark"? "light" : "dark");
-    localStorage.setItem('theme', theme)
+  useLayoutEffect(()=>{
+    if(darkTheme){
+      
+      setTheme(theme === "dark"? "light" : "dark");
+    }
+    localStorage.setItem('theme', theme);
   }, [darkTheme])
 
   if(theme === 'dark'){
     document.documentElement.style.background = 'black';
-    console.log(theme)
   } else{
     document.documentElement.style.background = 'white';
-    console.log(theme)
   }
 
   const themeContext: ThemeContextType = {

@@ -1,11 +1,12 @@
-const Loader:React.FC = () => {
+import  GridLoader  from "react-spinners/gridLoader"
 
+
+const Loader:React.FC = () => {
+  const loading = true
+ 
     return (
     <div className="h-100vh w-100vw py-16 flex flex-col justify-center items-center">
-        <img src="/GIF's/Pokémon_GO_logo.svg.png" className="rounded-xl h-50% w-5/6 md:w-50% "/>
-
-        {/* spinner should be here */}
-        
+        <GridLoader color="rgb(255, 222, 38)" loading={loading} size={50} />
     </div>
   )
 }

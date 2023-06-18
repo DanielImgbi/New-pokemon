@@ -11,6 +11,8 @@ const Header = ({handleSearchToggle}: Props) => {
   
   const themeContext = useContext(ThemeContext);
   const [showNav, setShowNav] = useState(false);
+  const userData = localStorage.getItem('user')
+  const user = JSON.parse(userData!);
 
   const handleNavToggle = () => {
     setShowNav( prevVal => !prevVal )
@@ -27,18 +29,24 @@ const Header = ({handleSearchToggle}: Props) => {
         width={"80px"}
       />
 
-      <div className="w-24 flex justify-between">
+      <div className="w-[120px] flex justify-between items-center">
 
         <BsSearch 
           size={26 } 
           fill={`${themeContext?.theme === 'light' ? 'black' : 'white'}`} 
           onClick={handleSearchToggle}
+          className='cursor-pointer'
         />
 
+        <div className="h-[50px] w-[50px] rounded-full">
+          <img src={user?.data.picture} className="h-3/3 w-3/3 rounded-full" />
+        </div>
+
         <BsThreeDotsVertical 
-          size={26 } 
+          size={20} 
           fill={`${themeContext?.theme === 'light' ? 'black' : 'white'}`} 
           onClick={handleNavToggle}
+          className='cursor-pointer'
         />
 
       </div>

@@ -11,7 +11,7 @@ const PokemonDetail = lazy(() => import('./PokemonDetail'))
 const route = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={< RootLayout />}>
-          <Route index element={<HomeLayout/> } />
+          <Route index element={<HomeLayout/> }/>
           <Route path="pokemonDetail/:id" element={< PokemonDetail/>}/>
         </Route>
     )
